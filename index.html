@@ -7,17 +7,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
+    /* Body styling */
     body {
+      background: #fafafa;
+      margin: 0;
+      padding: 0;
       font-family: 'Inter', system-ui, sans-serif;
       font-weight: 400;
-      background: #fafafa;
       color: #222;
-      margin: 0;
-      padding: 0 2rem;
-      max-width: 760px;
       line-height: 1.6;
     }
 
+    /* Main container centered */
+    .container {
+      max-width: 760px;
+      margin: 0 auto; /* center horizontally */
+      padding: 0 2rem;
+    }
+
+    /* Header background */
     .header-bg {
       width: 100%;
       height: 300px;
@@ -28,12 +36,13 @@
       margin-bottom: 4.5rem;
     }
 
+    /* Profile name */
     .profile-name {
       font-family: 'Poppins', sans-serif;
       font-size: 2rem;
       font-weight: 600;
       text-align: left;
-      margin-top: -1rem; 
+      margin-top: -1rem;
       margin-bottom: 2rem;
       position: relative;
       display: inline-block;
@@ -49,10 +58,12 @@
       border-radius: 2px;
     }
 
+    /* Profile container */
     .profile-container {
       display: flex;
-      align-items: flex-start;
       gap: 2rem;
+      align-items: flex-start;
+      flex-wrap: wrap; /* wrap on mobile */
       margin-bottom: 2rem;
     }
 
@@ -68,7 +79,6 @@
       height: 300px;
       object-fit: cover;
       margin-bottom: 0.5rem;
-      border-radius: 0;
     }
 
     .social-icons {
@@ -88,8 +98,8 @@
     }
 
     .profile-text {
-      flex: 1;
-      margin-top: -1.6rem;
+      flex: 1; /* take remaining width, font remains same size */
+      margin-top: 0;
     }
 
     .free-time {
@@ -126,12 +136,12 @@
       color: #0056b3;
     }
 
-    section {
-      margin-bottom: 2rem;
-    }
-
     section p {
       text-align: justify;
+    }
+
+    section {
+      margin-bottom: 2rem;
     }
 
     footer {
@@ -143,111 +153,91 @@
   </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <div class="header-bg"></div>
+    </header>
 
-  <header>
-    <div class="header-bg"></div>
-  </header>
+    <section>
+      <h2 class="profile-name">Dario Binacchi</h2>
 
-  <section>
-    <h2 class="profile-name">Dario Binacchi</h2>
+      <div class="profile-container">
+        <div class="photo-icons">
+          <img src="dario-binacchi.jpeg" alt="Dario Binacchi" class="profile">
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/dario-binacchi-698a9734" target="_blank">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/passgat" target="_blank">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
+            </a>
+            <a href="https://openhub.net/accounts/passgat" target="_blank">
+              <img src="openhub.png" alt="OpenHub">
+            </a>
+          </div>
+        </div>
 
-    <div class="profile-container">
-      <div class="photo-icons">
-        <img src="dario-binacchi.jpeg" alt="Dario Binacchi" class="profile">
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/dario-binacchi-698a9734" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
-          </a>
-          <a href="https://github.com/passgat" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
-          </a>
-          <a href="https://openhub.net/accounts/passgat" target="_blank">
-            <img src="openhub.png" alt="OpenHub">
-          </a>
+        <div class="profile-text">
+          <p>I am an embedded developer fascinated by open source software. With a thesis on Digital Signal Processor I graduated in Software Engineering in 2000, but above all I started my career in the embedded world, first on bare-metal systems and then on architectures with Linux operating systems.</p>
+
+          <p>The meeting with Amarula, on behalf of its CEO Michael Trimarchi, aroused in me the desire to actively contribute to projects such as Buildroot, U-Boot and Linux. This has been and continues to be for me a source of great inspiration and satisfaction.</p>
+
+          <p>For me, programming means learning while having fun.</p>
         </div>
       </div>
 
-      <div class="profile-text">
-        <p>I am an embedded developer fascinated by open source software. With a thesis on Digital Signal Processor 
-        I graduated in Software Engineering in 2000, but above all I started my career in the embedded world, 
-        first on bare-metal systems and then on architectures with Linux operating systems.</p>
+      <p class="free-time">In my free time I enjoy jogging, watching movies, reading and fishing (<strong>passgat</strong> too :)) while sitting on the bank of the PO river.</p>
 
-        <p>The meeting with Amarula, on behalf of its CEO Michael Trimarchi, aroused in me the desire to actively 
-        contribute to projects such as Buildroot, U-Boot and Linux. This has been and continues to be for me 
-        a source of great inspiration and satisfaction.</p>
+      <p>I live in Suzzara, near Mantua, but from Luzzara — like a Unix pun, just one letter away.</p>
+    </section>
 
-        <p>For me, programming means learning while having fun.</p>
-      </div>
-    </div>
+    <section>
+      <h2 class="section-title">Linux Kernel</h2>
+      <p>I have contributed over <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&q=dario.binacchi" target="_blank" class="patch-link">200 patches</a> for ARM/ARM64 platforms, in areas ranging from board bring-up and clock drivers to fixes and improvements in subsystems such as CAN, DRM, and touchscreen.</p>
+      <p>My work on the slCAN and bxCAN drivers as part of the CAN subsystem led me to become the maintainer of these drivers.</p>
+    </section>
 
-    <p class="free-time">
-      In my free time I enjoy jogging, watching movies, reading and fishing (<strong>passgat</strong> too :)) while sitting 
-      on the bank of the PO river.
-    </p>
+    <section>
+      <h2 class="section-title">U-Boot</h2>
+      <p>I started contributing patches for video support on the BeagleBoard and later worked on other subsystems such as clocks, pinctrl, NAND, RTC, PWM, GPIO, and more, eventually reaching around <a href="https://source.denx.de/u-boot/u-boot/-/commits/master?author=Dario%20Binacchi" target="_blank" class="patch-link">200 patches</a>.</p>
+      <p>Together with my colleague Michael Trimarchi at Amarula, I am also co-custodian of the NAND subsystem.</p>
+    </section>
 
-    <p>
-      I live in Suzzara, near Mantua, but from Luzzara — like a Unix pun, just one letter away.
-    </p>
-  </section>
+    <section>
+      <h2 class="section-title">Buildroot</h2>
+      <p>Buildroot is the open-source project I have contributed to the most, with over <a href="https://git.buildroot.org/buildroot/log/?qt=author&q=dario.binacchi" target="_blank" class="patch-link">300 patches</a>. Ideal for board bring-up and fast kernel and bootloader development, Buildroot remains my preferred build system.</p>
+    </section>
 
-  <section>
-    <h2 class="section-title">Linux Kernel</h2>
-    <p>I have contributed over <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&q=dario.binacchi" target="_blank" class="patch-link">200 patches</a> for ARM/ARM64 platforms, in areas ranging from board bring-up and clock drivers to fixes and improvements in subsystems such as CAN, DRM, and touchscreen.</p>
-    <p>My work on the slCAN and bxCAN drivers as part of the CAN subsystem led me to become the maintainer of these drivers.</p>
-  </section>
+    <section>
+      <h2 class="section-title">And more</h2>
+      <p>Working with Buildroot, along with my practice of sending any fix or improvement upstream, has allowed me to contribute a smaller number of patches to many other projects you can find listed on my <a href="https://openhub.net/accounts/passgat" target="_blank" class="patch-link">OpenHub</a> profile, from ZephyrRTOS and Yocto to Xenomai and many more.</p>
+    </section>
 
-  <section>
-    <h2 class="section-title">U-Boot</h2>
-    <p>
-      I started contributing patches for video support on the BeagleBoard and later worked on other subsystems such as clocks, pinctrl, NAND, RTC, PWM, GPIO, and more, eventually reaching around <a href="https://source.denx.de/u-boot/u-boot/-/commits/master?author=Dario%20Binacchi" target="_blank" class="patch-link">200 patches</a>.
-    </p>
-    <p>
-      Together with my colleague Michael Trimarchi at Amarula, I am also co-custodian of the NAND subsystem.
-    </p>
-  </section>
+    <section>
+      <h2 class="section-title">Talks & Community</h2>
+      <p>I actively take part in talks and community events, sharing knowledge and contributing to open-source projects whenever possible.</p>
+      <ul>
+        <li><strong>2024 – FOSDEM, Brussels:</strong> <a href="https://archive.fosdem.org/2024/schedule/event/fosdem-2024-2864-linux-can-upstreaming-on-mmu-less-systems/" target="_blank" class="patch-link">Linux CAN upstreaming on MMU-less systems</a></li>
+        <li><strong>2024 – Linux Day, Mantova:</strong> <a href="https://lugman.org/Linux_day_2024" target="_blank" class="patch-link">"FOSS upstreaming: Guidelines for getting started with contributing to open source projects"</a></li>
+        <li><strong>2024 – ELCE, Vienna:</strong> <a href="https://www.linkedin.com/posts/buildroot_this-weekend-there-was-a-buildroot-developer-activity-7241111186333732865-KEAg?utm_source=share&utm_medium=member_ios&rcm=ACoAAAdHhBQBlvNmMXKkxS1iNlLQ-Tql3GKU_fA" target="_blank" class="patch-link">Buildroot Developer Meeting</a></li>
+        <li><strong>2025 – ELCE, Amsterdam:</strong> <a href="https://osseu2025.sched.com/event/25Vwy/feasibility-and-architecture-of-a-dual-board-embedded-system-yocto-zephyr-integration-andrea-ricchi-dario-binacchi-amarula-solutions" target="_blank" class="patch-link">Feasibility and architecture of a dual-board embedded system: Yocto & Zephyr integration</a></li>
+      </ul>
+    </section>
 
-  <section>
-    <h2 class="section-title">Buildroot</h2>
-    <p>
-      Buildroot is the open-source project I have contributed to the most, with over <a href="https://git.buildroot.org/buildroot/log/?qt=author&q=dario.binacchi" target="_blank" class="patch-link">300 patches</a>.
-      Ideal for board bring-up and fast kernel and bootloader development, Buildroot remains my preferred build system.
-    </p>
-  </section>
+    <section>
+      <h2 class="section-title">Contacts</h2>
+      <p><strong>Email:</strong> dariobin@libero.it<br>
+         <strong>Email:</strong> dario.binacchi@amarulasolutions.com</p>
+    </section>
 
-  <section>
-    <h2 class="section-title">And more</h2>
-    <p>Working with Buildroot, along with my practice of sending any fix or improvement upstream, has allowed me to contribute a smaller number of patches to many other projects you can find listed on my <a href="https://openhub.net/accounts/passgat" target="_blank" class="patch-link">OpenHub</a> profile, from ZephyrRTOS and Yocto to Xenomai and many more.</p>
-  </section>
-
-  <section>
-    <h2 class="section-title">Talks & Community</h2>
-    <p>I actively take part in talks and community events, sharing knowledge and contributing to open-source projects whenever possible.</p>
-    <ul>
-      <li><strong>2024 – FOSDEM, Brussels:</strong> <a href="https://archive.fosdem.org/2024/schedule/event/fosdem-2024-2864-linux-can-upstreaming-on-mmu-less-systems/" target="_blank" class="patch-link">Linux CAN upstreaming on MMU-less systems</a></li>
-      <li><strong>2024 – Linux Day, Mantova:</strong> <a href="https://lugman.org/Linux_day_2024" target="_blank" class="patch-link">"FOSS upstreaming: Guidelines for getting started with contributing to open source projects"</a></li>
-      <li><strong>2024 – ELCE, Vienna:</strong> <a href="https://www.linkedin.com/posts/buildroot_this-weekend-there-was-a-buildroot-developer-activity-7241111186333732865-KEAg?utm_source=share&utm_medium=member_ios&rcm=ACoAAAdHhBQBlvNmMXKkxS1iNlLQ-Tql3GKU_fA" target="_blank" class="patch-link">Buildroot Developer Meeting</a></li>
-      <li><strong>2025 – ELCE, Amsterdam:</strong> <a href="https://osseu2025.sched.com/event/25Vwy/feasibility-and-architecture-of-a-dual-board-embedded-system-yocto-zephyr-integration-andrea-ricchi-dario-binacchi-amarula-solutions" target="_blank" class="patch-link">Feasibility and architecture of a dual-board embedded system: Yocto & Zephyr integration</a></li>
-    </ul>
-  </section>
-
-  <section>
-    <h2 class="section-title">Contacts</h2>
-    <p>
-      <strong>Email:</strong> dariobin@libero.it<br>
-      <strong>Email:</strong> dario.binacchi@amarulasolutions.com
-    </p>
-  </section>
-
-  <footer>
-    <h2 style="font-family: 'Poppins', sans-serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Credits</h2>
-    <p>
-      Background image from: <a href="http://www.fondazioneunpaese.org/fotografia/" target="_blank">http://www.fondazioneunpaese.org/fotografia/</a>
-    </p>
-    <p>FABRIZIO ORSI – MARCELLO GRASSI</p>
-    <p><em>Luzzara. Cinquant’anni e più…</em></p>
-    <p>Inkjet print, color, 60 x 120 cm, 2004</p>
-    <p style="margin-top: 2rem;">&copy; 2025 - Dario Binacchi</p>
-  </footer>
-
+    <footer>
+      <h2 style="font-family: 'Poppins', sans-serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">Credits</h2>
+      <p>Background image from: <a href="http://www.fondazioneunpaese.org/fotografia/" target="_blank">fondazioneunpaese.org</a></p>
+      <p>FABRIZIO ORSI – MARCELLO GRASSI</p>
+      <p><em>Luzzara. Cinquant’anni e più…</em></p>
+      <p>Inkjet print, color, 60 x 120 cm, 2004</p>
+      <p style="margin-top: 2rem;">&copy; 2025 - Dario Binacchi</p>
+    </footer>
+  </div>
 </body>
 </html>
